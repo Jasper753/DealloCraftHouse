@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # [Start Bootstrap - Shop Homepage](https://startbootstrap.com/template-overviews/shop-homepage/)
 
 [Shop Homepage](http://startbootstrap.com/template-overviews/shop-homepage/) is a basic HTML online store homepage template for [Bootstrap](http://getbootstrap.com/) created by [Start Bootstrap](http://startbootstrap.com/).
@@ -61,8 +60,3 @@ Start Bootstrap is based on the [Bootstrap](http://getbootstrap.com/) framework 
 ## Copyright and License
 
 Copyright 2013-2017 Blackrock Digital LLC. Code released under the [MIT](https://github.com/BlackrockDigital/startbootstrap-shop-homepage/blob/gh-pages/LICENSE) license.
-=======
-# DealloCraftHouse
-
-DP2 Development Project Pass Team. This is to develop a e-marketplace website for our DP2 Development Project. This project is for a fictional company named Deallo House Ltd. This repository started on 10/9/2017, and using the Scrum Agile Development, this is planned to deliver all or almost all core features by 2 sprints. Our Team plan to use bootstrap to help develop our website, including some backend implementation by uing use MyPHP and MySQL.
->>>>>>> origin/master
