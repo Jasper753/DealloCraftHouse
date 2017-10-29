@@ -3,7 +3,6 @@
 
   <head>
         <title>Deallo Craft House</title>
-
         <?php
             include_once "./tag/header.php"
         ?>
@@ -20,10 +19,12 @@
     <div class="container">
 
       <div class="row">
-
+	  
+     
 		<?php
             include_once "./tag/catagories.php"
         ?>
+		
         <!-- /.col-lg-3 -->
 
         <div class="col-lg-9">
