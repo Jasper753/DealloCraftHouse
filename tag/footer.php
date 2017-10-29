@@ -8,6 +8,9 @@
 
     <!-- Custom styles for this template -->
     <link href="css/shop-homepage.css" rel="stylesheet">
+<<<<<<< HEAD
 	
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+=======
+>>>>>>> 65050a8c5f93809fc55c9212208ba5d9b3992d42
