@@ -1,6 +1,10 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
       <div class="container">
+<<<<<<< HEAD
         <a class="navbar-brand" href="index.php">Deallo Craft House</a>
+=======
+        <a class="navbar-brand" href="#">Deallo Craft House</a>
+>>>>>>> 45f0cab2557819e5de5b67c03d0db8b6c2c611ae
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>

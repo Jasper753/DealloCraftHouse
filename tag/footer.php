@@ -1,3 +1,4 @@
+<<<<<<< HEAD
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
@@ -11,3 +12,11 @@
 	
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+=======
+    <footer class="py-5 bg-dark footer">
+      <div class="container">
+        <p class="m-0 text-center text-white">Copyright &copy; DealloCraftHouse - eMarketPlace DP2 2017</p>
+      </div>
+      <!-- /.container -->
+    </footer>
+>>>>>>> 45f0cab2557819e5de5b67c03d0db8b6c2c611ae
