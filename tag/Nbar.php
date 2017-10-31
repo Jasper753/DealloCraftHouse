@@ -1,3 +1,5 @@
+
+    <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
       <div class="container">
         <a class="navbar-brand" href="#">Deallo Craft House</a>
@@ -17,11 +19,13 @@
             <li class="nav-item">
               <a class="nav-link" href="#">Contact Us</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Sign Up</a>
-			<li class="nav-item">
-              <a class="nav-link" href="#">Sign In</a>
-            </li>
+              <?php if(isset($_SESSION['SESS_USER_ID'])){ ?>
+                <?php echo '<li class="nav-item"><a class="nav-link" href="#" style="text-decoration:none">'.$_SESSION['SESS_USER_NAME'].'</a>';?>
+                <li class="nav-item"><a class=" nav-link" href="logout.php" style="text-decoration:none">Logout</a>
+            <?php }else{ ?>
+                <li class="nav-item"><a class="nav-link" href="signin.php" style="text-decoration:none">Login</a>
+            <?php } ?>
+            
           </ul>
         </div>
       </div>
