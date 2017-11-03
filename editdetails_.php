@@ -18,7 +18,7 @@
 <?php
       include_once "./tag/Nbar.php"
       ?>
-  <div class="container">
+  <div class="container pad">
       <div class= "row">
           <div class = "col-md-5">
               <h3>Update Details</h3>

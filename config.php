@@ -5,8 +5,8 @@
  */
 $host       = "127.0.0.1";
 $username   = "root";
-$password   = "123456";
-$dbname     = "useracc_";
+$password   = "";
+$dbname     = "useraccc_";
 $dsn        = "mysql:host=$host;dbname=$dbname";
 $options    = array(
                 PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
