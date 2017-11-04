@@ -1,3 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+        <?php
+            include_once "./tag/header.php"
+        ?>
+
+  </head>
+
+  <body>
+
+   <?php
+            include_once "./tag/Nbar.php"
+        ?>
 <?php
 
     require "config.php";
@@ -34,4 +49,10 @@
         echo " BEFORE CHANGING YOUR DETAILS.";
     }
 ?>
-
+</body>
+<?php
+            include_once "./tag/footer.php"
+        ?>
+<script src="http://code.jquery.com/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+</html>
