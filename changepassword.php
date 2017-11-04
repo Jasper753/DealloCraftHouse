@@ -2,17 +2,22 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Bootstrap -->
-    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+        <?php
+            include_once "./tag/header.php"
+        ?>
   </head>
-  <body class="container">
+
+  <body>
+   <?php
+            include_once "./tag/Nbar.php"
+        ?>
+      
+  <div class="container pad">
       <div class= "row">
           <div class = "col-md-5">
               <h3>Change password</h3>
               
-              <form action="changepassword.php" method = "post">
-                  
+              <form action="changepassword_.php" method = "post">
                   
                   <div class="form-group">
                       <label for="">Verify current password:</label> <input type='password' name='oldpassword'/>
@@ -32,7 +37,11 @@
               </form>
           </div>          
       </div>
-
+      </div>
+      </body>
+<?php
+            include_once "./tag/footer.php"
+        ?>
 <script src="http://code.jquery.com/jquery.js"></script>
     <script src="js/bootstrap.min.js"></script>
   </body>
