@@ -2,7 +2,6 @@
  session_start();
 
     require "config.php";
-    require "../testing/common.php";
     $connection = new PDO($dsn, $username, $password, $options);
     $msg = ""; 
 
