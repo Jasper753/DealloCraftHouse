@@ -1,9 +1,7 @@
-
 <?php
-function list_product($list,$filter) {
-    
-    include_once "./process/des_filter.php";
-    require "./process/db_conn.php";
+function product_list($list,$filter) {
+    include_once "des_filter.php";
+    require "db_link.php";
 
     if ($filter != 0) {
         $offset = 0;
@@ -27,4 +25,50 @@ function list_product($list,$filter) {
     
     if (!empty($products)) {
         foreach($products as $products) { 
+?>
+            <div class="<?php echo $divstyle ?>">
+                <div class="list-productpicture">
+                    <a href="product_details.php?id=<?php echo $products["product_id"]; ?>">
+                        
+                            <img class="list-group-image productimg" src="./assets/imgs/products/<?php echo $products["product_id"]; ?>" alt="Picture of <?php echo $products["product_name"]; ?>" />
+                        
+                        <img class="list-group-image productimg" src="
+                        <?php
+                            $directory = "./assets/imgs/products/" . $products["product_id"];
+                            $images = glob("$directory/*.{jpg,png,jpeg}", GLOB_BRACE);
+
+                            foreach($images as $image)
+                            {
+                                echo $image;
+                                break;
+                            }
+                        ?>" alt="Picture of <?php echo $products["product_name"]; ?>" />
+                    </a>
+                </div>
+                <div class="list-productdetails">
+                    <a href="product_details.php?id=<?php echo $products["product_id"]; ?>">
+                        <h4 class="list-group-item-heading"><?php echo substrwords($products["product_name"],30); ?></h4>
+                    </a>
+
+                    <!--
+                        <p class="list-group-item-text">
+						<?php echo substrwords($products["product_desc"],100); ?></p>
+                    -->
+
+                    <div class="row">
+                        <div class="item product col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                            <h4>$<?php echo $products["product_price"]; ?></h4>
+                        </div>
+                        <div class="item product col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                            <a class="btn btn-primary" href="product_details.php?id=<?php echo $products["product_id"]; ?>"><span class="glyphicon glyphicon-info-sign"></span> View</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    <?php 
+        }
+    } else {
+        echo "<p>No Product at the moment, will update it later :) Please Subcribe </p>";
+    }
+}
 ?>
