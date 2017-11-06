@@ -16,9 +16,9 @@
          <h3>Would you like to edit your details?</h3>
          <br>
          
-        <input type="button" class="btn btn-info" value="Update Details" onclick="location.href = 'editdetails_.php';">
+        <input type="button" class="btn btn-info" value="Update Details" onclick="location.href = 'editdetailsform.php';">
         
-        <input type="button" class="btn btn-info" value="Change Password" onclick="location.href = 'changepassword.php';">
+        <input type="button" class="btn btn-info" value="Change Password" onclick="location.href = 'changepasswordform.php';">
      </div>
     </body>
     
