@@ -38,11 +38,12 @@
       </div>
 
     </div>
-      
+      <div class ="footer">
       <!-- Footer -->
     <?php
             include_once "./tag/footer.php"
         ?>
+        </div>
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>

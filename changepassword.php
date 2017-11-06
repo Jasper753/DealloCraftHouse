@@ -24,7 +24,7 @@
                   </div>
                   
                   <div class="form-group">
-                      <label for="">New password:</label> <input type='password' name='newpassword'/>
+                      <label for="">New password:</label> <br><input type='password' name='newpassword'/>
                   </div>
                   
                   <div class="form-group">
@@ -39,10 +39,11 @@
       </div>
       </div>
       </body>
+    <div class="footer">
 <?php
             include_once "./tag/footer.php"
         ?>
+    </div>
 <script src="http://code.jquery.com/jquery.js"></script>
     <script src="js/bootstrap.min.js"></script>
-  </body>
 </html>
