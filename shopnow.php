@@ -33,9 +33,9 @@
                         <?php
                             include_once "./process/product_list.php";
                             if (empty($_GET["filter"])){
-                                list_product(0,0);
+                                product_list(0,0);
                             } else {
-                                list_product(0,$_GET["filter"]);
+                                product_list(0,$_GET["filter"]);
                             }
                         ?>
                     </div>
