@@ -22,16 +22,16 @@ if(isset($_POST['submit'])) {
       
       $count = $stmt->rowCount();
       $row   = $stmt->fetch(PDO::FETCH_ASSOC);
-  echo $count;
+ 	  echo $count;
         if($count == 1  && !empty($row)) {
      
         $_SESSION['SESS_USER_ID']   = $row['id'];
         $_SESSION['SESS_USER_NAME']= $row['username'];
         $_SESSION['SESS_EMAIL'] = $row['email'];
-        print("YOU HAVE SUCCESSFULLY LOGGED IN!");
-        echo "<br>";
-        echo "<a href='editdetails.html'>Update details  |  </a>"; 
-        echo "<a href='changepassword.html'>Change password</a>"; 
+//         if(isset $_SESSION['SESS_USER_ID']) {
+        		header("Location: afterlogin.php");
+
+//         }
       } else {
         $msg = "Invalid username and password!";
             print("$msg");

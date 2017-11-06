@@ -1,3 +1,6 @@
+<?php
+	include_once __DIR__."/../login.php"
+?>
 
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
@@ -23,7 +26,7 @@
               <a class="nav-link" href="#">Contact Us</a>
             </li>
               <?php if(isset($_SESSION['SESS_USER_ID'])){ ?>
-                <?php echo '<li class="nav-item"><a class="nav-link" href="#" style="text-decoration:none">'.$_SESSION['SESS_USER_NAME'].'</a>';?>
+                <?php echo '<li class="nav-item"><a class="nav-link" href="afterlogin.php" style="text-decoration:none">'.$_SESSION['SESS_USER_NAME'].'</a>';?>
                 <li class="nav-item"><a class=" nav-link" href="logout.php" style="text-decoration:none">Logout</a>
             <?php }else{ ?>
             	<li class="nav-item"><a class=" nav-link" href="signup.php" style="text-decoration:none">Sign up</a>
