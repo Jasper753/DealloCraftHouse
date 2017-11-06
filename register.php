@@ -60,6 +60,7 @@
 		
 		$statement = $connection->prepare($sql);
 		$statement->execute($new_user);
+		header("Location: index.php");
 	}
 	catch(PDOException $error) 
 	{

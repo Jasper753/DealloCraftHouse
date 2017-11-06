@@ -1,6 +1,6 @@
-CREATE DATABASE useracc_;
+CREATE DATABASE useraccc_;
 
-use useracc_;
+use useraccc_;
 
 CREATE TABLE IF NOT EXISTS users (
 	id INT(11) UNSIGNED AUTO_INCREMENT PRIMARY KEY,

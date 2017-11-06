@@ -20,11 +20,18 @@ body {
   left: 0;
   right: 0;
   height:100px;
-  padding: 1rem;
   background-color: #efefef;
   text-align: center;
 }
 
 .pad {
 	padding: 70px 50px 75px;
+}
+
+.profile {
+    position:absolute; 
+    top: 40%;
+    left: 35%;
+    right: 20%;
+    bottom:50%; 
 }
