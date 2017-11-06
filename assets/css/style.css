@@ -1,0 +1,272 @@
+/* NavBar CSS */
+.navbar-form {
+    text-align: center;
+}
+.navbar-toggle {
+    z-index:3;
+}
+/* Use this to center Brand Name instead
+.navbar-brand {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    text-align: center;
+    margin:0 auto;
+}
+.navbar-toggle {
+    z-index:3;
+}
+*/
+
+/* Content CSS */
+.content {
+    margin-top: 50px;
+    margin-bottom: 75px;
+}
+
+/* Footer CSS */
+/*
+.footer {
+    position: relative;
+    background: #ee984d;
+    padding-bottom: 30px;
+    width: 100%;
+    border-top: 1px solid #d35400;
+    color: #ecf0f1;
+}
+.footer a {
+    text-decoration: none;
+    color: #ecf0f1;
+}
+.footer a:hover {
+    color: #ffe6d1;
+}
+.footer ul {
+    list-style-type: none;
+    margin-left: 0;
+    padding-left: 0;
+    margin-top: 15px;
+    color: #ecf0f1;
+}
+.footer ul li a {
+    padding: 0 0 10px 0;
+    display: block;
+}
+.footer ul li a img {
+    max-width: 100%;
+    display: block;
+    margin: 0 auto;
+}
+*/
+.footer-bottom {
+    background: #e67e22;
+    color: #ecf0f1;
+}
+.footer-bottom p {
+    padding-top: 8px;
+}
+.footer-bottom ul li {
+    font-size: 2em;
+}
+
+/* Alters navbar-default properties */
+.navbar-default {
+    background-color: #e67e22;
+    border-color: #d35400;
+}
+.navbar-default .navbar-brand {
+    color: #ecf0f1;
+}
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus {
+    color: #ffe6d1;
+}
+.navbar-default .navbar-text {
+    color: #ecf0f1;
+}
+.navbar-default .navbar-nav > li > a {
+    color: #ecf0f1;
+}
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+    color: #ffe6d1;
+}
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+    color: #ffe6d1;
+    background-color: #d35400;
+}
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:hover,
+.navbar-default .navbar-nav > .open > a:focus {
+    color: #ffe6d1;
+    background-color: #d35400;
+}
+.navbar-default .navbar-toggle {
+    border-color: #d35400;
+}
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:focus {
+    background-color: #d35400;
+}
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: #ecf0f1;
+}
+.navbar-default .navbar-collapse,
+.navbar-default .navbar-form {
+    border-color: #ecf0f1;
+}
+.navbar-default .navbar-link {
+    color: #ecf0f1;
+}
+.navbar-default .navbar-link:hover {
+    color: #ffe6d1;
+}
+
+@media (max-width: 767px) {
+    .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+        color: #ecf0f1;
+    }
+    .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
+    .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+        color: #ffe6d1;
+    }
+    .navbar-default .navbar-nav .open .dropdown-menu > .active > a,
+    .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover,
+    .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+        color: #ffe6d1;
+        background-color: #d35400;
+    }
+	
+}
+/*.navbar-nav > li > .dropdown-menu {    
+	background-color: #e7e7e7;  
+ }*/
+
+/* Banner CSS */
+.bannerimg {
+    width: 100%;
+    min-height: 375px;
+    max-height: 500px;
+}
+
+/* Product & Item Grid CSS */
+.product {
+    margin-top: 10px;
+    color: black;
+}
+
+.product a {
+    text-decoration: none;
+    color: black;
+}
+
+.product:hover {
+    background: #ffe6d1;
+}
+
+.product a.btn {
+    color: whitesmoke;
+}
+
+.productimg {
+    width: 100%;
+    height: 175px;
+    max-height: 250px;
+}
+
+.product .list-productpicture {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    padding: 0px;
+    border-radius: 0px;
+}
+
+.product .list-productdetails {
+    margin: 0 0 10px;
+}
+
+/* Product Details page CSS */
+.productdetail {
+    margin-top: 18px;
+}
+.productdetail img {
+    width: 50%;
+    height: 300px;
+    max-height: 400px;
+}
+
+/* Display login ID on navigation bar */
+
+.userID{
+	/* padding-top: 15px;*/
+	 color: #ecf0f1;
+}
+
+/*Login Page button */
+.facebook_button{
+	background-color:#3b5998;
+	border:none;
+	color:white;
+	padding:10px;
+	border-radius:4px;
+}
+		
+.google_button{
+	background-color:#db3236;
+	border:none;
+	color:white;
+	padding:10px;
+	border-radius:4px;
+	margin-left:50px;
+}
+
+/* profile.php & children css */
+.profiledirectory {
+    margin-top: 175px;
+    margin-bottom: 150px;
+    text-align: center;
+}
+
+.profiledirectory h2 {
+    margin-bottom: 65px;
+}
+
+.profiledirectory a {
+    text-decoration: none;
+    color: black;
+}
+
+.profiledirectory img {
+    height: 80%;
+    width: 80%;
+    margin-bottom: 15px;
+}
+
+.alignRight{
+	text-align:right;
+}
+
+.cartHeader{
+	font-weight:bold;
+	text-align:center;
+	margin-top:20px;
+	margin-bottom:10px;
+	
+}
+
+.alignCenter{
+	text-align:center;
+}
+
+.emptyCart{
+	text-align:center;
+	padding: 88px 0 100px 156px;
+}
+
+input[type=number]{
+	width:50%;
+}
+
+
