@@ -17,7 +17,7 @@
           <div class = "col-md-5">
               <h3>Change password</h3>
               
-              <form action="changepassword_.php" method = "post">
+              <form action="changepassword.php" method = "post">
                   
                   <div class="form-group">
                       <label for="">Verify current password:</label> <input type='password' name='oldpassword'/>

@@ -45,7 +45,7 @@
 
     else {
         echo "PLEASE ";
-        echo "<a href='login.html'>LOG IN</a>"; 
+        echo "<a href='loginform.php'>LOG IN</a>"; 
         echo " BEFORE CHANGING YOUR DETAILS.";
     }
 ?>

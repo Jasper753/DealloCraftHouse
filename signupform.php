@@ -19,7 +19,7 @@
           <div class = "col-md-5">
               <h3>Sign Up</h3>
               
-              <form action="register.php" method = "post">
+              <form action="signup.php" method = "post">
                   
                   <div class = "form-group">
                       <label for="">First name</label>
