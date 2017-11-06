@@ -1,3 +1,6 @@
+<?php
+	include_once __DIR__."/../login.php"
+?>
 
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
