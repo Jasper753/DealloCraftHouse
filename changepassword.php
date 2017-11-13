@@ -1,18 +1,4 @@
-<!DOCTYPE html>
-<html>
-  <head>
 
-        <?php
-            include_once "./tag/header.php"
-        ?>
-
-  </head>
-
-  <body>
-
-   <?php
-            include_once "./tag/Nbar.php"
-        ?>
 <?php
 
     require "config.php";
@@ -39,27 +25,23 @@
                 if(($newpassword == $newpasswordagain) && !empty($newpassword)){
                     $querypwc=$connection->query("UPDATE users SET password='$newpassword' WHERE id = '$id'");
                     
-                    die("YOUR PASSWORD HAS BEEN CHANGED!");
+                    echo "<script>
+                alert('YOUR PASSWORD HAS BEEN CHANGED!');
+                window.location.href='index.php';</script>";
                 } 
                 else
-                    die("NEW PASSWORD DOES NOT MATCH!");
+                     echo "<script>
+                alert('NEW PASSWORD DOES NOT MATCH!');
+                window.location.href='changepasswordform.php';</script>";
+                    
             } 
             else 
             {
-                die ("CURRENT PASSWORD DOES NOT MATCH!");
+                echo "<script>
+                alert('CURRENT PASSWORD DOES NOT MATCH!');
+                window.location.href='changepasswordform.php';</script>";    
             }     
         }
     }
-else {
-    echo "PLEASE ";
-    echo "<a href='login.html'>LOG IN</a>"; 
-    echo " BEFORE CHANGING YOUR PASSWORD.";
-}
+
 ?>
-</body>
-<?php
-            include_once "./tag/footer.php"
-        ?>
-<script src="http://code.jquery.com/jquery.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-</html>

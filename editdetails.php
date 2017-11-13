@@ -1,18 +1,3 @@
-<!DOCTYPE html>
-<html>
-  <head>
-
-        <?php
-            include_once "./tag/header.php"
-        ?>
-
-  </head>
-
-  <body>
-
-   <?php
-            include_once "./tag/Nbar.php"
-        ?>
 <?php
 
     require "config.php";
@@ -37,22 +22,12 @@
             
             if(!empty($location) && !empty($email)){
                 $querydetail = $connection ->query("UPDATE users SET email = '$email' , location ='$location' WHERE id = '$id'");
-                
-                die("YOUR DETAILS HAS BEEN CHANGED!");
-            }    
-        }
+                echo "<script>
+                alert('YOU HAVE SUCCESSFULLY UPDATED YOUR DETAILS!');
+                window.location.href='index.php';</script>";    
+            }
+            
     }
-
-    else {
-        echo "PLEASE ";
-        echo "<a href='loginform.php'>LOG IN</a>"; 
-        echo " BEFORE CHANGING YOUR DETAILS.";
     }
+    
 ?>
-</body>
-<?php
-            include_once "./tag/footer.php"
-        ?>
-<script src="http://code.jquery.com/jquery.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-</html>

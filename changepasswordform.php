@@ -20,15 +20,15 @@
               <form action="changepassword.php" method = "post">
                   
                   <div class="form-group">
-                      <label for="">Verify current password:</label> <input type='password' name='oldpassword'/>
+                      <label for="">Verify current password:</label> <input type='password' name='oldpassword' class="form-control" required/>
                   </div>
                   
                   <div class="form-group">
-                      <label for="">New password:</label> <br><input type='password' name='newpassword'/>
+                      <label for="">New password:</label> <br><input type='password' name='newpassword' class="form-control" required/>
                   </div>
                   
                   <div class="form-group">
-                      <label for="">Repeat new password: </label><input type='password' name='newpasswordagain'>
+                      <label for="">Repeat new password: </label><input type='password' name='newpasswordagain' class="form-control" required/>
                   </div>
                                 
                   <div class="form-group">

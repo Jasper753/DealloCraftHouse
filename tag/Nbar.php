@@ -24,14 +24,36 @@
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">Contact Us</a>
-            </li>
-              <?php if(isset($_SESSION['SESS_USER_ID'])){ ?>
-                <?php echo '<li class="nav-item"><a class="nav-link" href="afterlogin.php" style="text-decoration:none">'.$_SESSION['SESS_USER_NAME'].'</a>';?>
-                <li class="nav-item"><a class=" nav-link" href="logout.php" style="text-decoration:none">Logout</a>
-            <?php }else{ ?>
-            	<li class="nav-item"><a class=" nav-link" href="signupform.php" style="text-decoration:none">Sign up</a>
-                <li class="nav-item"><a class="nav-link" href="loginform.php" style="text-decoration:none">Login</a>
-            <?php } ?>
+              </li>
+              
+              
+              <?php
+                if ( isset( $_SESSION['SESS_USER_NAME'] ) ) // user is logged in
+                {
+                ?>
+                      <li class="dropdown">
+                        <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown" style="text-decoration:none"><b><?php echo $_SESSION['SESS_USER_NAME'];?> </b> <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                               <li><a href="afterlogin.php">My Profile</a></li>
+                               <li><a href="logout.php">Log Out</a></li>
+                           </ul>
+                        
+                          
+                </li>
+                       
+
+                <?php
+                }
+                else // not logged in
+                {
+                ?>
+                   <!-- Login Form -->
+                   <li class="nav-item"><a class=" nav-link" href="signupform.php" style="text-decoration:none">Sign up</a>
+                   <li class="nav-item"><a class="nav-link" href="loginform.php" style="text-decoration:none">Login</a>
+                   <!-- /.Login Form -->
+                <?php
+                }
+                ?>
             
           </ul>
         </div>

@@ -25,12 +25,12 @@
                   
                   <div class="form-group">
                       <label for="">Location</label>
-                      <input type="text" name="location" class="form-control"/>
+                      <input type="text" name="location" class="form-control" required/>
                   </div>
                   
                   <div class="form-group">
                       <label for="">Email address</label>
-                      <input type="email" name="email" class="form-control"/>
+                      <input type="email" name="email" class="form-control" required/>
                   </div>
               
                   <div class="form-group">
@@ -42,12 +42,9 @@
       </div>
       
 <!-- Footer -->
-    <footer class="py-5 bg-dark footer">
-      <div class="container">
-        <p class="m-0 text-center text-white">Copyright &copy; DealloCraftHouse - eMarketPlace DP2 2017</p>
-      </div>
-      <!-- /.container -->
-    </footer>
+    <?php
+            include_once "./tag/footer.php"
+        ?>
 <script src="http://code.jquery.com/jquery.js"></script>
     <script src="js/bootstrap.min.js"></script>
   </body>

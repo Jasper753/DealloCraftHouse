@@ -9,14 +9,15 @@
   </head>
 
   <body>
+   	 	<script src="assets/js/form_validation.js"></script>
 
    <?php
             include_once "./tag/Nbar.php"
         ?>
       
       <div class="container pad">
-      <div class= "row">
-          <div class = "col-md-5">
+          <div>
+          
               <h3>Sign Up</h3>
               
               <?php
@@ -84,13 +85,16 @@
 	catch(PDOException $error) 
 	{
         if($error->getCode() == 23000){
-            echo "<font color='red'>USERNAME OR EMAIL ADDRESS HAS ALREADY BEEN USED!!</font>";
+            echo "<font color='red'>USERNAME OR EMAIL ADDRESS HAS ALREADY BEEN USED!!</font><br>";
         }
 	}
 }
 
 ?>
-              
+          </div>
+                <div class= "row">
+
+              <div class = "col-md-5">
     <form action="signupform.php" method = "post">
                   
                   <div class = "form-group">

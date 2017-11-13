@@ -11,8 +11,9 @@ header("Location: index.php");    }
 
     if(isset($_POST['submit'])) {
         if(isset($_SESSION['SESS_USER_ID'])){
-            print("You are already logged in!!");
-            exit;
+            echo "<script>alert('You are already logged in!!!');
+                window.location.href='index.php';</script>";
+        
         }
     $username = trim($_POST['username']);
     $password = trim($_POST['password']);
@@ -34,8 +35,8 @@ header("Location: index.php");    }
         $_SESSION['SESS_EMAIL'] = $row['email'];
         header("Location: afterlogin.php");
         } else {
-//            $msg = "Invalid username and password!";
-//            print("$msg");
+            echo "<script>alert('Invalid username and password!');
+                window.location.href='loginform.php';</script>";
         }
     } catch (PDOException $e) {
 //      echo "Error : ".$e->getMessage();
