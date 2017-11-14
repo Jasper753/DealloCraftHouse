@@ -26,52 +26,7 @@
         </div>		
 		
 		<script type="text/javascript" charset="utf-8">	
-			
-            /* The following is the predefined template used for preview upload images*/
-            var uploadTemp = function(data){
-                var preview = "";
-
-                if(!data.order || data.order.length === 0)
-                {
-                    preview = "<img src='"+"assets/images/uploadsample.png' height=200 width=200/>";
-                    preview += "<br/>";
-                    preview += "<span style='display:inline-block; width:200px; text-align:center'>No image selected</span> ";
-                }
-
-                var suffix = ["","a","b","c","d","e"];
-                var removeLink = "";
-                if (data.each)
-                {
-                    data.each(function(obj){
-                        preview += "<img id='" + obj.id + "' ";
-                        /* if the image is read from file picker */
-                        if(obj.status == 'client')
-                        {
-                            var image = document.getElementById(obj.id);
-                            var reader  = new FileReader();
-
-                            reader.onloadend = function (e) {
-                                $("#"+obj.id).attr('src',e.target.result);
-                            }
-
-                            reader.readAsDataURL(obj.file);
-                        }
-                        /* if the image is read from server */
-                        else
-                        {
-                            var filetype = "." + obj.name.split(".")[1];
-                            preview += "src='assets/images/products/"+<?php echo (isset($_GET["id"]) ? $_GET["id"] : "1") ?> +"/"+suffix[obj.id]+filetype+"' ";
-                        }
-                        preview     += "height=200 width=200/> ";
-                        removeLink  += "<a href='javasript:;' onClick='removeImage("+ obj.id +","+ '"' +obj.name + '"' +")' style='display:inline-block; width:200px; text-align:center'>[ - Remove ]</a> ";
-                    });
-                    //Concatenate images with hyperlink of removal
-                    preview += "<br/>" + removeLink;
-                }
-                return preview;
-            }
-            
-			var productRegisterForm = [
+					var productRegisterForm = [
 				{					
 					id:"formContent",
 					rows:[
@@ -95,19 +50,13 @@
 											var type = item.type.toLowerCase();
 											var itemsizeMB = item.size/1024;
 											
-											// Detect and avoid unsupported image input
-											if (type != "jpg" && type != "jpeg" && type != "png"){
-												alert("File format of " + item.name + " is not supported");
-												return false;
 											}
 											
-											// Detect and avoid image file with more than 3MB file size
 											if (itemsizeMB >= 3072){
 												alert(item.name + " file size exceeded maximum 3MB limit");
 												return false;
 											}
 											
-											// Detect and avoid duplicate image file input
 											var data = this.files.data.pull;
 											var countData = this.files.data.order;
 											if(countData.length > 0)
@@ -163,20 +112,6 @@
 						{ view:"text", width:600, label:"Name", name:"product_name", required:true, invalidMessage:"* Required" },
 						{ view:"textarea", width:700, label:"Description", name:"product_desc", required:true, height:120, invalidMessage:"* Required" },
 						{ view:"text", label:"Stock Quantity", id:"stockQuantity", name:"product_stockQty", width:280,invalidMessage:"* Invalid input", required:true, attributes:{ type:"number", min:"0" } },
-						/*{ 
-							id:"variations",
-							rows:[
-								//Row(s) of variation will be added programmatically here after clicking on button of adding/removing a variation
-							]							
-						},
-						{ 
-							id:"btnVariations", 
-							cols:[
-								{ width:140 },
-								{ view:"label", id:"btnAddVariation", label:"<a href='javascript:;'>[+] Add a product variation</a>", click:"addVariation", width:250 },
-								{ view:"label", id:"btnDelVariation", label:"<a href='javascript:;'>[-] Remove a product variation</a>", click:"delVariation", hidden:true, width:250 }
-							]							
-						},*/
 						{ 
 							cols:[
 								{ view: "text", label:"Weight", name:"product_weight", width:280, placeholder:"0.00", required:true, invalidMessage:"* Invalid input", },
@@ -186,25 +121,6 @@
 						{ view:"text", label:"Price", name:"product_price", width:280, placeholder:"0.00", required:true },
 						{ view:"text", width:700, label:"Tag(s)", name:"product_tags", placeholder:"Separate by single whitespace (e.g. Cloth, food and etc)" },
 						{ view:"textarea", width:700, label:"Product Policy", name:"product_policy", height:100, placeholder:"Remarks for Warranty/Refund Issue/Any Clarifications", required:true, invalidMessage:"* Required" },
-						/*
-						{ template:"Shipping Details", type:"section" },				
-						{ 
-							cols:[
-								//{ view: "label", label:"<strong>Shipping Method(s)</strong>", autowidth:true },
-								{ 
-									rows: [
-										{ view: "label", label:"<strong>Shipping Method(s)</strong>", autowidth:true },
-										{ view:"checkbox", labelRight:"Asian Express Worldwide", value:"aew", align:"left",name:"shippingMethod" },
-										{ view:"checkbox", labelRight:"DHL Express", value:"dhl_express", name:"shippingMethod" },
-										{ view:"checkbox", labelRight:"Dynamic Parcel Distribution (DPD)", value:"dpd", name:"shippingMethod" },
-										{ view:"checkbox", labelRight:"FedEx", value:"fedex", name:"shippingMethod" },
-										{ view:"checkbox", labelRight:"TNT", value:"tes", name:"shippingMethod" },
-										{ view:"checkbox", labelRight:"United Parcel Service (UPS)", value:"tes", name:"shippingMethod" }
-									]
-								}
-							]
-						}
-						*/	
 					]
 				},
 				{
@@ -215,7 +131,6 @@
 				}
 			];
 			
-
 			webix.ui({
 				container:"productRegisterForm",
 				rows:[
@@ -242,85 +157,61 @@
 					}
 				]
 			});
-            
+			
+		        var uploadTemp = function(data){
+                var preview = "";
+
+                if(!data.order || data.order.length === 0)
+                {
+                    preview = "<img src='"+"assets/images/uploadsample.png' height=200 width=200/>";
+                    preview += "<br/>";
+                    preview += "<span style='display:inline-block; width:200px; text-align:center'>No image selected</span> ";
+                }
+
+                var suffix = ["","a","b","c","d","e"];
+                var removeLink = "";
+                if (data.each)
+                {
+                    data.each(function(obj){
+                        preview += "<img id='" + obj.id + "' ";
+                      
+                        if(obj.status == 'client')
+                        {
+                            var image = document.getElementById(obj.id);
+                            var reader  = new FileReader();
+
+                            reader.onloadend = function (e) {
+                                $("#"+obj.id).attr('src',e.target.result);
+                            }
+
+                            reader.readAsDataURL(obj.file);
+                        }
+                        else
+                        {
+                            var filetype = "." + obj.name.split(".")[1];
+                            preview += "src='assets/images/products/"+<?php echo (isset($_GET["id"]) ? $_GET["id"] : "1") ?> +"/"+suffix[obj.id]+filetype+"' ";
+                        }
+                        preview     += "height=200 width=200/> ";
+                        removeLink  += "<a href='javasript:;' onClick='removeImage("+ obj.id +","+ '"' +obj.name + '"' +")' style='display:inline-block; width:200px; text-align:center'>[ - Remove ]</a> ";
+                    });
+                    preview += "<br/>" + removeLink;
+                }
+                return preview;
+            }
+                       
             var removedImage = [];
 			function removeImage(imageID, imageName)
 			{
-                // Detect only the server-side image(s) to be removed by user
                 if(imageID <= 5)
                     removedImage.push(imageName);
 				$$("product_images").files.data.remove(imageID);
 			}			
-			/*
-			var variation_number = 0;
-			var numVar = 0;
-			function addVariation(){						
-				variation_number++;
-				
-				var label = "Variation " + variation_number;
-				var size_name = "size_" + variation_number;
-				var color_name = "color_" + variation_number;
-				var stock_name = "stockQty_" + variation_number;
-				var newVariation = 
-				{
-					id: "var_"+variation_number,
-					cols:[
-						{ width:40 },
-						{ view: "text", label:label, labelWidth:100, id:size_name, name:size_name, width:250, placeholder:"Size", validate:function(value,data,name){ return validateVariation(value,data,name,this,color_name) }},
-						{ view: "colorpicker", width:170, id:color_name, name: color_name, placeholder:"Click to choose color", validate:function(value,data,name){ return validateVariation(value,data,name,this,size_name) }},
-						{ view: "text", width:180, id:stock_name, name: stock_name, placeholder:"Stock Quantity", required:true, validate:function(value,data,name){ return validateStockQty(value,data,name,this,size_name) } }
-					]
-				};
-				
-				$$("stockQuantity").hide();
-				$$("btnDelVariation").show();	
-				
-				numVar = $$("variations").q.length;
-				if(numVar === 0){
-					var notice = { 
-						id:"notice", 
-						cols:[
-							{ width:140 },
-							{ view:"label", label:"* One or both of the field (i.e Size/Color) must be filled along with stock quantity" }
-						]
-					};
-					$$("variations").addView(notice);
-				}
-				
-				if(numVar <= 6)
-				{
-					$$("variations").addView(newVariation);
-					$$(size_name).focus();
-				}
-				
-				if(variation_number == 6)
-					$$("btnAddVariation").hide();
-			}			
-			
-			function delVariation(){
-				$$("btnAddVariation").show();
-				    
-				numVar = $$("variations").q.length;
-				if(numVar !== 0)
-				{
-					var varNum = "var_" + variation_number;
-					$$("variations").removeView(varNum);
-					variation_number--;
-				}
-				
-				if(variation_number	 == 0)
-				{
-					$$("variations").removeView("notice");
-					$$("btnDelVariation").hide();
-					$$("stockQuantity").show();
-				}
-			}	*/
             
             function uploadImages(action,countImgUpload,productID,countToUpload,serverData){                
 				var imgUploader = $$("product_images");
                 if(action === "add")
                 {
-                    // Upload images
+
                     imgUploader.define('formData',{ action: "add", countUpload:countImgUpload });
                     $$("product_images").send(function(response){
                         if(response.status == "server")
@@ -329,7 +220,7 @@
                 }
                 else if(action === "modify")
                 {
-                    // Upload images if there is new images picked by user through uploader
+             
                     imgUploader.define('formData',{ id:productID, countUpload:countToUpload, serverData:serverData, action:"modify" });
                     $$("product_images").send(function(response){
                         console.log(response)
@@ -360,34 +251,30 @@
                     <?php 
                         if(isset($_GET["id"])) { 
                             echo "var productID = ".$_GET['id'];
-                    ?>					
-                            // Standardized naming of different product image(s)					
+                    ?>									
                             var data = imgFiles.pull;
-                            var serverData = [];    //store server-side images that is not removed from uploader list
+                            var serverData = [];    
                             var countToUpload = 0;
                             for(var key in data)
                             {  
                                 var filename = data[key].name;
-                                //if the image is identified as server-side resource
+   
                                 if(key <= 5)
                                     serverData.push(filename);
                                 else
                                     countToUpload++;
                             }
-                    
-                            // If only server-side images to be removed but no new images added by user
+                   
                             if(countToUpload === 0 && removedImage.length > 0)
                                 uploadImages("delete",0,productID,countToUpload,serverData);
-                            // If only user add images but no server-side image to be removed
-                            else if(countToUpload > 0)
-                                uploadImages("modify",0,productID,countToUpload,serverData);
+							else if(countToUpload > 0)uploadImages("modify",0,productID,countToUpload,serverData);
                     <?php
                             echo "imgUploader.define('formData',{ id:productID, countUpload:countToUpload, serverData:serverData });";
                             echo "productForm.setValues({id:".$_GET["id"]."},true)";
                         };
                     ?>
                     
-					//productForm.setValues({ variation_number: variation_number },true)
+					
 					webix.ajax().post("process/productEdit_process.php", productForm.getValues(),
 						function(text, data){
 							if(text == "success")
@@ -401,7 +288,7 @@
 						$$("noImgInvalidMsg").hide();
                     
                     $$("invMsg").show();
-                    window.location = "#";   //jump to top of page to let user sees the error message 
+                    window.location = "#";  
 				}
 			}
             

@@ -10,16 +10,19 @@
             if(session_id() == "")
                 session_start();
 
-            if(!isset($_SESSION["login_user"])){
+            if(!isset($_SESSION["login_user"]))
                 header("location:index.php");
-            }
+            
 		?>
+		
+		
+		
 		
 		<?php include_once "./tag/Nbar.php" ?>
 		
         <div class="container">
             <h1 class="page-header">My Products</h1>
-            <?php include_once "process/list_seller_product.php" ?>
+            <?php include_once "process/seller_product_list.php" ?>
         </div>
         
         <script>
@@ -31,7 +34,7 @@
                     type:"alert-error",
                     callback:function(result){
                         if(result){
-                            webix.ajax().post("process/productDelete_process.php",{ product_id: itemID },
+                            webix.ajax().post("process/product_delete.php",{ product_id: itemID },
                             function(text,data){
                                 console.log(text)
                                 if(text === "success"){
@@ -50,6 +53,6 @@
             }
         </script>
 		
-		<?php include_once "./include/Footer.php" ?>				
+		<?php include_once "./tag/footer.php" ?>				
 	</body>
 </html>
